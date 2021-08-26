@@ -1,134 +1,128 @@
-<ng-container *ngIf="roomsByGroup.length>0">
+<ng-container *ngIf="roomsByGroup.length > 0">
   <ng-container *ngFor="let item of roomsByGroup">
-    
-      {{item[0]?.RoomType}}
-      <ng-container *ngFor="let room of item">
-        <div>{{room?.BoardType}}</div>
-      </ng-container>
-  </ng-container>
-</ng-container>
-<div *ngIf="rooms.length>0">
-  <div fxLayout="row wrap" class="hotelItem m10">
-    <div
-      fxFlex="25"
-      fxFlex.xs="100"
-      fxFlex.md="100"
-      style="position: relative"
-      class="hotel-image"
-    >
-      <img class="w100 hotelphoto" [src]="rooms[0].RoomImageURL" />
-      <div class="room-type-info-image-bottom-cont">
-        <div>
-          Max <i class="fas fa-male"></i><i class="fas fa-male"></i
-          ><i class="fas fa-male"></i>
-        </div>
-      </div>
-    </div>
-    <div fxFlex="75" fxFlex.xs="100" fxFlex.md="100">
-      <div class="rooms-area">
-        <h2 class="m0">{{ rooms[0].RoomType }}</h2>
-        <p>
-          {{ rooms[0].RoomInfo }}
-        </p>
-
-        <div class="room-amenities">
-          <i class="fab fa-keycdn" matTooltip="Wifi"></i>
-          <i class="fab fa-keycdn" matTooltip="Wifi"></i>
-          <i class="fab fa-keycdn" matTooltip="Wifi"></i>
-          <i class="fab fa-keycdn" matTooltip="Wifi"></i>
-
-          <div
-            style="
-              color: #000;
-              font-weight: 500;
-              padding: 9px !important;
-              font-size: 14px;
-              cursor: pointer;
-            "
-          >
-            <i class="fas fa-search-plus"></i
-            ><span style="text-decoration: underline; padding-left: 5px"
-              >Devamını Göster</span
-            >
+    <div fxLayout="row wrap" class="hotelItem m10">
+      <div
+        fxFlex="25"
+        fxFlex.xs="100"
+        fxFlex.md="100"
+        style="position: relative"
+        class="hotel-image"
+      >
+        <img class="w100 hotelphoto" [src]="rooms[0].RoomImageURL" />
+        <div class="room-type-info-image-bottom-cont">
+          <div>
+            Max <i class="fas fa-male"></i><i class="fas fa-male"></i
+            ><i class="fas fa-male"></i>
           </div>
         </div>
       </div>
-    </div>
+      <div fxFlex="75" fxFlex.xs="100" fxFlex.md="100">
+        <div class="rooms-area">
+          <h2 class="m0">{{ item[0]?.RoomType }}</h2>
+          <div class="room-type-info-content">{{ item[0]?.RoomInfo }}</div>
 
-    <mat-tab-group class="hotelItem w100">
-      <ng-container *ngFor="let item of [1, 2, 3]">
-        <mat-tab label="First">
-          <div fxLayout="row wrap" class="align-center" style="padding: 15px 0px;">
-            <div class="roomItem" fxFlex="40" fxFlex.xs="50" fxFlex.md="48">
-              <div class="room-properties">
-                <div>
-                  <button
-                    style="border: none"
-                    color="primary"
-                    mat-stroked-button
-                  >
-                    <mat-icon>info</mat-icon>
-                  </button>
-                </div>
-
-                <div class="infoItem">non-refundable</div>
-              </div>
-            </div>
-
-            <div class="roomItem" fxFlex="18 " fxFlex.xs="50" fxFlex.md="38">
-              <div class="room-price">
-                <div class="default-price">
-                  <span class="price" style="text-decoration: line-through"
-                    >900</span
-                  >
-                  <div class="price-inline">
-                    <span style="text-decoration: line-through">.00</span
-                    ><span style="text-decoration: line-through">EUR</span>
-                  </div>
-                </div>
-
-                <div class="default-price finalPrice">
-                  <span class="price">810</span>
-                  <div class="price-inline">
-                    <span>.00</span><span>EUR</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="roomItem" fxFlex="10" fxFlex.xs="100" fxFlex.md="9">
-              <div class="price-percent">%10</div>
-            </div>
-
-            <div class="roomItem" fxFlex="14" fxFlex.xs="50" fxFlex.md="48">
-              <mat-form-field appearance="outline" class="w100 roomCount">
-                <mat-label> Oda Sayısı </mat-label>
-                <mat-select [value]="0">
-                  <mat-option
-                    [value]="i"
-                    *ngFor="let count of [1, 2, 3, 4, 5, 6]; index as i"
-                  >
-                    {{ i + 1 }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
+          <div class="room-amenities">
+            <i class="fab fa-keycdn" matTooltip="Wifi"></i>
+            <i class="fab fa-keycdn" matTooltip="Wifi"></i>
+            <i class="fab fa-keycdn" matTooltip="Wifi"></i>
+            <i class="fab fa-keycdn" matTooltip="Wifi"></i>
 
             <div
-              class="roomItem"
-              fxFlex="12"
-              fxFlex.xs="50"
-              fxFlex.md="48"
-              style="margin: auto; text-align: center"
+              style="
+                color: #000;
+                font-weight: 500;
+                padding: 9px !important;
+                font-size: 14px;
+                cursor: pointer;
+              "
             >
-              <button mat-raised-button color="accent">
-                Satın Al
-                <mat-icon>keyboard_arrow_right</mat-icon>
-              </button>
+              <i class="fas fa-search-plus"></i
+              ><span style="text-decoration: underline; padding-left: 5px"
+                >Devamını Göster</span
+              >
             </div>
           </div>
-        </mat-tab>
-      </ng-container>
-    </mat-tab-group>
-  </div>
-</div>
+        </div>
+      </div>
+
+      <mat-tab-group class="hotelItem w100 m0">
+        <ng-container *ngFor="let room of item">
+          <mat-tab [label]="room?.BoardType">
+            <div
+              fxLayout="row wrap"
+              class="align-center"
+              style="padding: 15px 0px"
+            >
+              <div class="roomItem" fxFlex="40" fxFlex.xs="50" fxFlex.md="48">
+                <div class="room-properties">
+                  <div>
+                    <button
+                      style="border: none"
+                      color="primary"
+                      mat-stroked-button
+                    >
+                      <mat-icon>info</mat-icon>
+                    </button>
+                  </div>
+
+                  <div class="infoItem">{{room?.RateType}}</div>
+                </div>
+              </div>
+
+              <div class="roomItem" fxFlex="18 " fxFlex.xs="50" fxFlex.md="38">
+                <div class="room-price">
+                  <div class="default-price">
+                    <span class="price" style="text-decoration: line-through"
+                      >{{room?.PriceContract}}</span>
+                    <div class="price-inline">
+                      <span style="text-decoration: line-through">.00</span
+                      ><span style="text-decoration: line-through">EUR</span>
+                    </div>
+                  </div>
+
+                  <div class="default-price finalPrice">
+                    <span class="price">{{room?.AvgPrice}}</span>
+                    <div class="price-inline">
+                      <span>.00</span><span>EUR</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="roomItem" fxFlex="10" fxFlex.xs="100" fxFlex.md="9">
+                <div class="price-percent">%10</div>
+              </div>
+
+              <div class="roomItem" fxFlex="14" fxFlex.xs="50" fxFlex.md="48">
+                <mat-form-field appearance="outline" class="w100 roomCount">
+                  <mat-label> Oda Sayısı </mat-label>
+                  <mat-select [value]="0">
+                    <mat-option
+                      [value]="i"
+                      *ngFor="let count of [1, 2, 3, 4, 5, 6]; index as i"
+                    >
+                      {{ i + 1 }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div
+                class="roomItem"
+                fxFlex="12"
+                fxFlex.xs="50"
+                fxFlex.md="48"
+                style="margin: auto; text-align: center"
+              >
+                <button mat-raised-button color="accent">
+                  Satın Al
+                  <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-tab>
+        </ng-container>
+      </mat-tab-group>
+    </div>
+  </ng-container>
+</ng-container>

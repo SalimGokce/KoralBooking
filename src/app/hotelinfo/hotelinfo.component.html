@@ -43,7 +43,7 @@
     </div>
 
     <div>
-      <a target="_blank" href="myhotel.com" class="ng-star-inserted"
+      <a target="_blank" [href]="hotelInfo.Web" class="ng-star-inserted"
         ><mat-icon>link</mat-icon>
         <span>{{hotelInfo.Web}}</span>
       </a>
@@ -62,7 +62,6 @@
     </div>
   </div>
 
-  <div fxFlex="100">    
-      {{hotelInfo.Description}}    
+  <div fxFlex="100" [innerHTML]="hotelInfo.Description">     
   </div>
 </div>

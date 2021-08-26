@@ -33,7 +33,7 @@ export class SearchboxComponent implements OnInit, OnDestroy {
       CHECKIN: new FormControl(new Date()),
       CHECKOUT: new FormControl(new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + this.minLos.value)),
       DAYS: new FormControl(1),
-      CHILD: new FormControl(0),
+      CHILDAGES: new FormControl(0),
       COUNTRYCODE: new FormControl(''),
       CURRENCY: new FormControl(''),
       HOTELID: new FormControl(null),

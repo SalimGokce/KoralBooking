@@ -17,6 +17,16 @@
   margin: 2px;
 }
 
+.room-type-info-content {
+  min-height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  white-space: pre-wrap;
+  max-height: 64px;
+  overflow: auto;
+  padding: 10px 0px;
+}
+
 .hotelphoto {
   height: 100%;
   object-fit: cover;
@@ -109,7 +119,6 @@
   border-radius: 7px;
   margin-bottom: 10px;
   margin-top: 10px;
-
 }
 
 .roomPrice {
@@ -128,13 +137,12 @@
   }
 }
 
-@media (max-width:767px) {
-  .price-percent { 
+@media (max-width: 767px) {
+  .price-percent {
     height: 30px;
     font-size: 18px;
   }
 }
-
 
 ::ng-deep .roomCount .mat-form-field-wrapper {
   padding: 0px !important;
